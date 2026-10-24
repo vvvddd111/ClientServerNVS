@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: products
+  datasource:
+    url: jdbc:postgresql://localhost:5432/productsdb
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000, expireAfterWrite=5m
+server:
+  port: 8081
